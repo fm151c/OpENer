@@ -331,6 +331,8 @@ EipStatus HandleReceivedConnectedData(const EipUint8 *const data,
                 g_common_packet_format_data_item.data_item.data,
                 g_common_packet_format_data_item.data_item.length);
             }
+          } else {
+              printf("==========================================\n")
           }
         } else {
           OPENER_TRACE_WARN(
@@ -954,6 +956,7 @@ EipStatus ManageConnections(MilliSeconds elapsed_time) {
           OPENER_TRACE_INFO(">>>>>>>>>>Connection ConnNr: %u timed out\n",
                             connection_object->connection_serial_number);
           OPENER_ASSERT(NULL != connection_object->connection_timeout_function);
+          // TODO(jiaoshijie):
           connection_object->connection_timeout_function(connection_object);
         } else {
           connection_object->inactivity_watchdog_timer -= elapsed_time;

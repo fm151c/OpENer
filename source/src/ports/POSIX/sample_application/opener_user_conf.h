@@ -196,6 +196,7 @@ static const MilliSeconds kOpenerTimerTickInMilliSeconds = 10;
  */
 #ifndef OPENER_UNIT_TEST
 
+#define OPENER_WITH_TRACES
 #ifdef OPENER_WITH_TRACES
 /* If we have tracing enabled provide LOG_TRACE macro */
     #include <stdio.h>

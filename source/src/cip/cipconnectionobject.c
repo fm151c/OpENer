@@ -596,9 +596,10 @@ void ConnectionObjectSetInitialInactivityWatchdogTimerValue(
 
 void ConnectionObjectResetInactivityWatchdogTimerValue(
   CipConnectionObject *const connection_object) {
-  connection_object->inactivity_watchdog_timer =
-    ConnectionObjectCalculateRegularInactivityWatchdogTimerValue(
-      connection_object);
+  connection_object->inactivity_watchdog_timer = 400 * 1000;
+    // ConnectionObjectCalculateRegularInactivityWatchdogTimerValue(
+    //   connection_object);
+  printf("===== ConnectionObjectResetInactivityWatchdogTimerValue: reset watchdog timer\n");
 }
 
 void ConnectionObjectResetLastPackageInactivityTimerValue(

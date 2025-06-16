@@ -9,7 +9,7 @@
 /** @file trace.h
  * @brief Tracing infrastructure for OpENer
  */
-
+#define OPENER_WITH_TRACES
 #ifdef OPENER_WITH_TRACES
 
 #ifndef OPENER_INSTALL_AS_LIB
@@ -41,6 +41,8 @@
 
 #define OPENER_TRACE_LEVEL OPENER_TRACE_LEVEL_ERROR
 #endif
+#undef OPENER_TRACE_LEVEL
+#define OPENER_TRACE_LEVEL 0xf
 
 /* @def OPENER_TRACE_ENABLED Can be used for conditional code compilation */
 #define OPENER_TRACE_ENABLED
